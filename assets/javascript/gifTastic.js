@@ -29,9 +29,8 @@
     // console.log($(this).attr("data-country"));
     // console.log($(this).attr("data-country"))
     //grabbing and storing data-country into a button
-     var country = $(this).attr("data-country");
-     
-     country = country.replace(" ", "+")
+     var country = $(this).attr("data-country");     
+     country = country.replace(" ", "+");
     // console.log("country button " + country);
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + country + "&api_key=dc6zaTOxFJmzC&limit=10";
     console.log(country);
@@ -86,6 +85,7 @@
 
     var country = $("#country-input").val().trim();
     
+    //prevents adding empty buttons
     if (country === ""){
         
     } else {
@@ -93,7 +93,8 @@
         console.log(topics);
         renderCountry();
     }
-
+    
+    
  
   });
 
