@@ -21,7 +21,22 @@
 //display onto html
        $("#country-buttons").append(newCountry);
     }
-  }  
+  } 
+//toogles giphys to stop and play
+$(document).on("click", ".giphys", function(){
+  
+  var state = $(this).attr("data-state");
+
+  if (state === "still") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state","animate");
+    } else {
+      $(this).attr("src",$(this).attr("data-still","animate"));
+      $(this).attr("data-state","still");
+    }
+
+});
+
 
 
 //listens to every button click
@@ -34,7 +49,8 @@
     // console.log("country button " + country);
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + country + "&api_key=dc6zaTOxFJmzC&limit=10";
     console.log(country);
-  
+   
+
   //call API request
     $.ajax({
       url: queryURL,
@@ -48,7 +64,6 @@
 
   //shows gifs with a limit of 10
       var results = response.data;
-     
       for (var i = 0; i < results.length; i++){
       console.log("results length ", results.length);
       
@@ -60,15 +75,18 @@
   //giphy image
       var countryImage = $("<img>");
         console.log(countryDiv);
-        countryImage.attr("src", results[i].images.fixed_height_small.url);
+        countryImage.attr("src", results[i].images.fixed_height_small_still.url);
+        countryImage.attr("data-animate",results[i].images.fixed_height_small_still.url);
+        countryImage.attr("data-still",results[i].images.fixed_height_small_still.url);
+        countryImage.attr("data-state","still");
+        countryImage.attr("class", "giphys");
         countryDiv.prepend(p);
         countryDiv.prepend(countryImage);
   //display Gifs onto html
         // console.log("country div " + countryDiv);
         $("#display-countries").prepend(countryDiv);
-      
 
-
+    
 
 
       }
