@@ -76,7 +76,7 @@ $(document).on("click", ".giphys", function(){
       var countryImage = $("<img>");
         console.log(countryDiv);
         countryImage.attr("src", results[i].images.fixed_height_small_still.url);
-        countryImage.attr("data-animate",results[i].images.fixed_height_small_still.url);
+        countryImage.attr("data-animate",results[i].images.fixed_height_small.url);
         countryImage.attr("data-still",results[i].images.fixed_height_small_still.url);
         countryImage.attr("data-state","still");
         countryImage.attr("class", "giphys");
