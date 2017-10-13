@@ -6,3 +6,14 @@ button {
   border-radius: 5px;
   border-style: none;
 }
+body {
+  background-image:url("../images/background.jpg");
+}
+
+.giphys {
+  
+}
+p {
+  color:white;
+  font-size: 16pt;
+}

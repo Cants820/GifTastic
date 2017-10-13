@@ -31,7 +31,7 @@ $(document).on("click", ".giphys", function(){
       $(this).attr("src", $(this).attr("data-animate"));
       $(this).attr("data-state","animate");
     } else {
-      $(this).attr("src",$(this).attr("data-still","animate"));
+      $(this).attr("src",$(this).attr("data-still"));
       $(this).attr("data-state","still");
     }
 

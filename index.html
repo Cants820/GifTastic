@@ -20,29 +20,31 @@
 
 </head>
 <body>
-  
+<div class="container">   
+  <div class="row">
+    <div id="country-buttons">
+    </div>
+  </div>
 
-<div id="country-buttons">
-    
+  <div class="row">
+    <div class="col-sm-8"></div>
+    <div class="col-sm-4">
+      <form id="add-country">
+        <label>Type in Country</label>
+        <input type="text" id="country-input"></input>
+        <br><br>
+        <input type="submit" id="add-country" class="submit-button"></input>
+      </form>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div id ="display-countries">
+  </div>
 </div>
-
-
-
-<form id="add-country">
-  
-  <label>Type in Country</label>
-  <input type="text" id="country-input"></input>
-  <br><br>
-  <input type="submit" id="add-country" class="submit-button"></input>
-</form>
-
-<div id = "display-countries">
-  
-</div>
-
 <!-- Qjuery Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/javascript/GifTastic.js"></script>
+  <script type="text/javascript" src="assets/javascript/gifTastic.js"></script>
 
 </body>
 </html>
